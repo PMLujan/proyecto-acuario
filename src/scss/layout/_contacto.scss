@@ -1,0 +1,156 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.contenedor-contacto{
+    background-color: v.$azul;
+    width: 50%;
+    max-width: 1000px;
+    height: 600px;
+    border-radius: 5px;
+    margin: 10px auto;
+    position: relative;
+    h3{
+        text-align: center;
+        font-size: 2rem;
+        color: v.$beige;
+        text-transform: uppercase;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+}
+.formulario-contacto{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.datos{
+    padding-left: 2rem;
+    height: 100px;
+    label{
+        font-size: 1.5rem;
+        padding-right: 1rem;
+        color: v.$beige;
+    }
+    input{
+        height: 4rem;
+        width: 100%;
+        padding-left: 1rem;
+        color: v.$gris-oscuro;
+        margin-top: 1rem;
+        list-style: v.$gris;
+    }
+}
+.dr{
+    padding-right: 1.5rem;
+   }
+.contenedor-mensaje{
+    grid-column: 1/3;
+
+    textarea{
+        width: 80%;
+        height: 80px;
+        display: block;
+        margin: 0 auto; 
+        padding: 1rem 0 0 1rem;
+        color: v.$gris-oscuro;
+    }
+    input{
+        padding: 1rem 3rem;
+        display: block;
+        margin: 5rem auto;
+        background-color: v.$beige;
+        border: none;
+        text-transform: uppercase;
+        &:hover{
+            background-color: rgb(27, 126, 27);
+            font-weight: bold;
+        }
+    }
+}
+@include m.tablet{
+    .contenedor-contacto{
+        width: 95%;
+        height: 650px;
+    }
+    .formulario-contacto{
+        display: block;
+    }
+    .datos{
+        label,input{
+            width: 95%;
+        }
+    }
+    .dr{
+        padding-right: 0;
+    }
+    .contenedor-mensaje{
+        input{
+            margin: 2rem auto;
+        }
+    }
+}
+/**EFECTO BURBUJAS**/
+
+.burbuja{
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: .3;
+    position: absolute;
+    bottom: -10;
+    animation: burbuja 3s linear infinite;
+}
+.burbuja:nth-child(1){
+    width: 60px;
+    height: 60px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+.burbuja:nth-child(2){
+    width: 30px;
+    height: 30px;
+    left: 15%;
+    animation-duration: 3s;
+    animation-delay: 5s;
+}
+.burbuja:nth-child(3){
+    width: 40px;
+    height: 40px;
+    left: 45%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+}
+.burbuja:nth-child(4){
+    width: 60px;
+    height: 60px;
+    left: 55%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+.burbuja:nth-child(5){
+    width: 30px;
+    height: 30px;
+    left: 70%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+.burbuja:nth-child(6){
+    width: 35px;
+    height: 35px;
+    left: 90%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+}
+
+@keyframes burbuja{
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    50%{
+        opacity: .4;
+    }
+    100%{
+        bottom: 100vh;
+        opacity: 0;
+    }
+}

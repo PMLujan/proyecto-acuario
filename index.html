@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel=StyleSheet href="build/css/app.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Aquatic World</title>
+</head>
+<body>
+  <!-- header  -->
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html"><img src="img/aquatic-logo.png" alt="Logo acuatico"></a>
+        <input type="checkbox" id="check">
+        <label for="check" class="check-btn"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ACC8E5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg></label>
+          <ul class="list-nav">
+            <li><a class="list-element" href="index.html">Inicio</a></li>
+            <li><a class="list-element entradas" href="#entradas">Entradas </a></li>
+            <li><a class="list-element especies" href="#especies">Especies</a></li>
+            <li><a class="list-element sumate" href="#sumate">Sumate</a></li>
+          </ul>
+    </nav>
+</header>
+<!-- overlay  -->
+<section>
+  <div class="contenedor-video">
+    <div class="overlay">
+      <div class="text-video">
+         <h2>Sumergite en los ecosistemas Marinos</h2>
+         <input type="submit" value="Entradas">
+      </div>
+    </div>
+    <video class="vd" autoplay muted loop>
+      <source src="video/Medusa - 110877.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+<!--seccion entradas-->
+<section class="seccion-entradas">
+  <h2 id="entradas" class="tituloEntradas">Entradas</h2>
+      <div class="entradas-contenedor">
+         <div class="entradas-box box1">
+              <img src="./img/imagen-entradas/e1.png"alt="logo">
+              <h3>General</h3>
+              <div class="contenedor-p">
+                <p>Valor: $3000</p>
+              </div>
+                <div class="check">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+         </div><!--fin de entrada-->
+         <div class="entradas-box box2">
+          <img src="./img/imagen-entradas/e2.png"alt="logo">
+          <h3>Niños</h3>
+          <div class="contenedor-p">
+            <p> Valor: $2500</p>
+          </div>
+            <div class="check">
+              <i class="fa-solid fa-check"></i>
+            </div>
+     </div><!--fin de entrada-->
+         <div class="entradas-box box3">
+             <img src="./img/imagen-entradas/e3.png"alt="logo">
+               <h3>Estudiantes</h3>
+               <div class="contenedor-p">
+                <p> Valor: $2000</p>
+              </div>
+          <div class="check">
+             <i class="fa-solid fa-check"></i>
+          </div>
+        </div><!--fin de entrada-->
+        <div class="entradas-box box4">
+           <img src="./img/imagen-entradas/e4.png"alt="logo">
+              <h3>Adultos mayores</h3>
+              <div class="contenedor-p">
+                <p> Valor: $1500</p>
+              </div>
+           <div class="check">
+              <i class="fa-solid fa-check"></i>
+           </div>
+        </div><!--fin de entrada-->
+      </div>
+    <input id="btn-comprar-entradas" type="submit" value="Comprar">
+</section>
+<!-- ventana modal ompra de entradas -->
+<section class="modal">
+  <div class="modalContainer">
+       <p>Selecciona tus entradas</p>
+         <img src="./img/boleto.png" alt="boleto">
+       <select class="modalTickets">
+              <option  disabled selected>Selecciona ticket</option>
+              <option >General</option>
+              <option >Niños</option>
+              <option >Estudiantes</option>
+              <option >Adultos mayores</option>
+      </select>
+      <input class="cantidadTickets" type="number" placeholder="Cantidad" min="1">
+      <input id="btn-realizar-pago" type="submit" value="Realizar pago">
+  </div>
+</section>
+<!-- seccion galeria -->
+<section class="contenedor-galeria">
+    <h3 id="especies">Alguna de nuestras Especies</h3>
+    <ul class="imagenes-galeria">
+
+    </ul>
+</section>
+<section class="contacto">
+     <div id="sumate" class="contenedor-contacto">
+      <h3 class="contacto" >Contactanos</h3>
+                <div class="contenedor-formulario">
+                     <form class="formulario-contacto">
+                            <div class=" datos">
+                                <label for="nombre">Nombre</label>
+                                   <input id="nombre" type="text" placeholder="Nombre">
+                            </div>
+                            <div class=" datos dr">
+                                <label for="apellido">Apellido</label>
+                                   <input id="apellido" type="text" placeholder="apellido">
+                            </div>
+                            <div class=" datos">
+                                <label for="email">Email</label>
+                                   <input id="email" type="email" placeholder="Email">
+                            </div>
+                            <div class=" datos dr">
+                                <label for="number">Teléfono</label>
+                                   <input id="telefono" type="text" placeholder="Teléfono">
+                            </div>
+                            <div class="contenedor-mensaje">
+                                <textarea>¿Porqué te gustaría ser parte de nuestro equipo?</textarea>
+                                <input type="submit" value="Enviar">
+                            </div>
+                    </form>
+                    <div class="burbujas">
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                    </div>
+                </div>
+     </div>
+</section>
+<footer class="footer">
+  <nav class="footer-navbar">
+      <ul>
+        <li><a  href="index.html">Inicio</a></li>
+        <li><a  href="#">Entradas </a></li>
+        <li><a  href="#">Especies</a></li>
+        <li><a  href="#">Sumate</a></li>
+      </ul>
+</nav>  
+<div class="redes">
+     <img src="./img/iconos-redes/facebook.svg" alt="facebook">
+     <img src="./img/iconos-redes/instagram.svg" alt="instagram">
+     <img src="./img/iconos-redes/twitter.svg" alt="twitter">
+</div>
+</footer>
+
+<script src="https://kit.fontawesome.com/8f583b2fa5.js" crossorigin="anonymous"></script>
+<script src="build/js/app.js"></script>
+<script src="build/js/entradas.js"></script>
+<script src="build/js/galeria.js"></script>
+<script src="build/js/tickets.js"></script>
+<script src="build/js/formulario.js"></script>
+</body>
+</html>

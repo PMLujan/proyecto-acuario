@@ -1,0 +1,128 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.seccion-entradas{
+    width: 100%;
+    max-width: 1000px;
+    margin: 5rem auto;
+}
+.tituloEntradas{
+   text-align: center;
+   font-size: 6rem;
+   color: v.$azul;
+   animation: backInLeft;
+   animation-duration: 2s;
+}
+.entradas-contenedor{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@include m.tablet{
+    .entradas-contenedor{
+        flex-direction: column;
+    }
+    .entradas-box{
+        img{
+            width: 16rem;
+        }
+    }
+}
+.entradas-box{
+    width: 25rem;
+    height: 25rem;
+    padding: 2rem;
+    margin: 1rem;
+    border: 2px solid v.$gris;
+    border-radius: 5px;
+    margin-top: 10rem;
+    text-align: center;
+    position: relative;
+    img{
+        transition: all 400ms;
+    }
+    h3{
+       font-size: 2rem;
+       margin-top: 1rem;
+       transition: all 500ms;
+    }
+    .contenedor-p{ /* se crea para ocultar el parrafo */
+        font-size: 1.3rem;
+        color: v.$gris-oscuro;
+        width: 100%;
+        height: 15rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 0 0 5px 5px;
+        overflow: hidden;
+        p{
+        opacity: 0;
+        transform: translateY(15rem);
+        color:v.$gris;
+        text-transform: uppercase;
+        font-size: 2rem;
+        padding-top: 7rem;
+        transition: all 600ms;
+        }
+    }
+}
+.check{
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%);
+    border: 2px solid v.$gris;
+    border-radius: 50%;
+    padding: .5rem;
+    background: v.$beige;
+    color: v.$azul;
+    display: none;
+}
+/*EFECTO HOVER*/
+.entradas-box:hover{
+    background: v.$azul;
+        color: v.$beige;
+}
+.entradas-box:hover img{
+    transform: translateY(-9rem);
+}
+.entradas-box:hover h3{
+    transform: translateY(-9rem);
+}
+.entradas-box:hover .contenedor-p p{
+    transform: translate(0px);
+    opacity: 1;
+}
+/*javascript*/
+.contenedor-seleccionado{
+    border-color: v.$beige;
+    transition: all 500ms;
+
+}
+.check-icono{
+    display: block;
+}
+.check-seleccionado{
+    border: none;
+    transition: all 600ms;
+}
+#btn-comprar-entradas{
+    display: block;
+    margin: 5rem auto;
+    background-color: v.$azul;
+    outline: none;
+    padding: 2rem 4rem;
+    border-radius: 5px;
+    border: transparent;
+    font-size: 2rem;
+    color: v.$beige;
+    &:hover {
+        cursor: pointer;
+        box-shadow: -10px 10px 5px 0px rgba(0,0,0,0.49);
+        -webkit-box-shadow: -10px 10px 5px 0px rgba(0,0,0,0.49);
+        -moz-box-shadow: -10px 10px 5px 0px rgba(0,0,0,0.49);
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,93 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.header{
+    background-color: v.$azul;
+    .navbar{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 8rem;
+        a{
+            img{
+                width: 14rem;
+            }
+            @include m.tablet{
+                img{
+                   width: 13rem;
+                   padding-left: 1rem;
+                }
+            }
+        }
+        #check,.check-btn{
+            display: none;
+        }  
+        @include m.tablet{
+           
+            .check-btn{
+                float: right;
+                display:block;
+                margin-top: -5rem;
+            }
+        }
+    }
+    @include m.tablet{
+        .navbar{
+            display: block;
+        }
+    }
+    .list-nav{
+        display: flex;
+        gap: 3rem;
+        @include m.resetear-lista;
+      
+        li{
+            width: 100%;
+            height: 8rem;
+            text-align: center;
+            padding: 2rem 1rem 0;
+            transition: all .8s;
+            &:hover{
+                background-color: v.$beige;
+                box-shadow: rgba(96, 173, 194, 0.35) 0px 20px 35px;
+            }
+            a{
+                color: v.$celeste;
+                text-transform: uppercase;
+                font-size: 1.8rem;
+                &:hover{
+                    color: v.$azul;
+                }
+            }
+        }
+    }
+    @include m.tablet{
+        .list-nav{
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: v.$azul;
+            left: -100% ;
+            transition: all .5s;
+        }
+    }
+}
+@include m.tablet{
+    #check:checked ~.list-nav{
+        left: 0;
+        z-index: 5;
+    }
+}
+/* CIERRE NAV RESPONSIVE*/
+.btnCierre{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px auto;
+    text-align: center;
+    padding: 1rem;
+    width: 10%;
+    border-radius: 50%;
+    background-color: v.$blanco;
+}

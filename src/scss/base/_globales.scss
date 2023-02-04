@@ -1,0 +1,29 @@
+@use '../base/variables' as v;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+body{
+    background-color: v.$celeste;
+    &.fijarBody{
+        overflow: hidden;
+    }
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+    margin: auto;
+    display: block;
+}
